@@ -1,0 +1,47 @@
+{
+  "name": "boilerplate",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "prettier 'src/**/*.js' 'src/components/**/*.js' '*.js' --write --single-quote && standard --fix",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17",
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "cross-env": "^5.1.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.3.0",
+    "node-fetch": "^1.7.3",
+    "npm-run-all": "^4.1.1",
+    "prettier": "^1.7.4",
+    "standard": "^10.0.3"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --single-quote",
+      "standard --fix",
+      "git add"
+    ]
+  },
+  "standard": {
+    "globals": [
+      "fetch",
+      "FormData",
+      "it",
+      "state",
+      "URL"
+    ],
+    "parser": "babel-eslint"
+  }
+}
