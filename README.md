@@ -30,3 +30,7 @@ https://aws.amazon.com/getting-started/tutorials/launch-a-wordpress-website/
 https://medium.com/@omgwtfmarc/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af
 
 https://github.com/serverless/serverless-client-s3/issues/5
+
+
+
+[![js-semistandard-style](https://cdn.rawgit.com/flet/semistandard/master/badge.svg)](https://github.com/Flet/semistandard)
