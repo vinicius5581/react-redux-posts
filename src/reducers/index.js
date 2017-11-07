@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux'
 import { GET_POSTS, SET_SORTING } from '../actions'
 
-const reducerTest = (state = {}) => state
-
 const receivePosts = (state = {}, action) => {
   switch (action.type) {
     case GET_POSTS:
@@ -22,7 +20,6 @@ const sorting = (state = {}, action) => {
 }
 
 export default combineReducers({
-  reducerTest,
   receivePosts,
   sorting
 })
