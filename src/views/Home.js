@@ -1,14 +1,30 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { fetchPosts } from '../actions'
 
 class Home extends Component {
+  componentWillMount () {
+    this.props.fetchData()
+  }
   render () {
-    return [<p key='1'>Home</p>, <p key='2'>This is the home page</p>]
+    return (
+      <div>
+        {this.props.posts &&
+          Object.values(this.props.posts).map(post => {
+            return <h1 key={post.id}>{post.title.rendered}</h1>
+          })}
+      </div>
+    )
   }
 }
 
 const mapStateToProps = state => ({
-  posts: state.getPosts
+  posts: state.receivePosts
 })
 
-export default connect(mapStateToProps)(Home)
+const mapDispatchToProps = dispatch => ({
+  dispatch,
+  fetchData: () => dispatch(fetchPosts())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
